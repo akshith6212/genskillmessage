@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>genskill</title>
+        <link rel="stylesheet" href="https://genskillmessage.s3.us-east-2.amazonaws.com/styles.css">
+        <link rel="shortcut icon" href="https://genskillmessage.s3.us-east-2.amazonaws.com/favicon.png" type="image/x-icon">
+    </head>
+    <body>
+        <div class="navbar">
+             <!--  -->
+            <a href="/"><img src="https://genskillmessage.s3.us-east-2.amazonaws.com/favicon.png">Genskill</a>
+            <div class="links">
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <a href="/add/message">new message</a>
+                        <a href="/add/company">new company</a>
+                        <!-- <a href="/edit/message">edit</a> -->
+                    {% endif %}
+                    <a href="/accounts/logout">logout</a>
+                    Hello {{user.username}}
+                {% else %}
+                    <a href="/accounts/login">login</a>
+                    <a href="/accounts/register">register</a>
+                {% endif %}
+            </div>
+        </div>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

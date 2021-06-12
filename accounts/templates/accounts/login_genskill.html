@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fav icon css -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://enskill-eas-static.s3.amazonaws.com/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://enskill-eas-static.s3.amazonaws.com/images/android-icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="https://enskill-eas-static.s3.amazonaws.com/images/apple-icon-72x72.png">
+
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/main.css">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/rwd.css">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/animate.css">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/boxicons.min.css">
+    <link type="text/css" rel="stylesheet"
+        href="https://enskill-eas-static.s3.amazonaws.com/css/bootstrap-datetimepicker.css">
+    <link type="text/css" rel="stylesheet"
+        href="https://enskill-eas-static.s3.amazonaws.com/css/pace-theme-minimal.css">
+
+    <title>Genskill App</title>
+</head>
+
+<body>
+    {% for message in messages %}
+        <h1> {{message}} </h1>
+    {% endfor %}
+    <div class="login-wrap d-flex align-content-center h-100">
+        <div class="container">
+            <div class="row  h-100 justify-content-center">
+                <div class="col-lg-5 col-md-8  align-self-center">
+                    <div class="bg-white bx-shadow p-3 mb-4">
+                        <div class="lycaeum-wolf">
+                            <div class="wolf-logo mb-3">
+                                <a href=""><img src="https://enskill-eas-static.s3.amazonaws.com/images/LycaeumLogo.svg"
+                                        alt="Lycaeum Logo" class="img-fluid"></a>
+                            </div>
+                            <!-- <h1>Sign In</h1> -->
+
+                            <div class="d-none">
+                                <script type="text/javascript"
+                                    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                            </div>
+                            <form id="login_form" class="login" method="POST">
+                                {% csrf_token %}
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id=""><i class='bx bx-user'></i></span>
+                                        </div>
+                                        <input class="form-control" required type="text" name="username"
+                                            placeholder="Username"
+                                            aria-describedby="inputGroupPrepend">
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id=""><i class='bx bx-key'></i></span>
+                                        </div>
+                                        <input class="form-control" type="password" name="password"
+                                            placeholder="Password" id="" aria-describedby="inputGroupPrepend">
+                                    </div>
+
+                                </div>
+
+                                <button class="primaryAction btn btn-block btn-theme" type="submit"
+                                    id="login_button_submit"> Login</button>
+
+
+                                <div class="row mt-3">
+                                    <div class="col-12 text-center">
+                                        <!-- <div class="small mb-3">
+                                            <a class="button secondaryAction" href="/accounts/password/reset/">Forgot
+                                                Password?</a>
+                                        </div> -->
+
+                                        <div class="small mb-3">
+                                            If you don't have an account, <a class="button"
+                                                href="/accounts/register_genskill/">Signup</a> here.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

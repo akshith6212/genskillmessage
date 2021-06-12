@@ -1,0 +1,22 @@
+{% extends 'app/layout/layout_new.html' %}
+
+{% block content %}
+    {% if user.is_staff %}
+        <h1 style="text-align: left;">Add Company...</h1>
+        <br/><br/>
+
+        <div class="form-group">
+        <form method="POST">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Post</button>
+        </form>
+        </div>
+
+    {% else %}
+        <script>
+            window.location.replace("/");
+        </script>
+    {% endif %}
+{% endblock %}

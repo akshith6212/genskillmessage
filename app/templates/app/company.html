@@ -1,0 +1,25 @@
+{% extends "app/layout/layout.html"%}
+
+{% block body %}
+
+    {% if user.is_authenticated %}        
+        <div class="container"> 
+            <h1>{{company.name}}</h1>
+            {% if empty == 0 %}
+                <div class="container nomsg vertical-center">
+                    No messages to display
+                </div>
+            {% endif %}
+            {%for message in messages %}
+                <div class="msg">
+                    <p>{{message.msg|safe}}</p>
+                    <p class="time">{{message.d|date:'d/m/Y H:i'}}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="container unlogged_user vertical-center">
+            Login/Register to see the details
+        </div>
+    {% endif %}  
+{% endblock %}

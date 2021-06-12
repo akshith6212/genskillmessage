@@ -1,0 +1,18 @@
+{% extends "app/layout/layout.html"%}
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <div class="container">
+            <h1>List of companies</h1>
+            <ol class="rectangle-list">
+                {%for company in companies %}
+                    <li><a href="{{company.id}}">{{ company.name }}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% else %}
+        <div class="container unlogged_user vertical-center">
+            Login/Register to see the details
+        </div>
+    {% endif %}    
+{% endblock %}

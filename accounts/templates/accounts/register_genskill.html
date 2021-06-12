@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <!-- fav icon css -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://enskill-eas-static.s3.amazonaws.com/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://enskill-eas-static.s3.amazonaws.com/images/android-icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="https://enskill-eas-static.s3.amazonaws.com/images/apple-icon-72x72.png">
+
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'accounts/reg.css' %}">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/rwd.css">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/animate.css">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/boxicons.min.css">
+    <link type="text/css" rel="stylesheet" href="https://enskill-eas-static.s3.amazonaws.com/css/bootstrap-datetimepicker.css">
+    <link type="text/css" rel="stylesheet"
+        href="https://enskill-eas-static.s3.amazonaws.com/css/pace-theme-minimal.css">
+
+    <!-- javascript files -->
+    <script src="https://genskillmessage.s3.us-east-2.amazonaws.com/validate.js"></script>
+
+    <title>Genskill App</title>
+</head>
+
+<body>
+    {% for message in messages %}
+        <h1> {{message}} </h1>
+    {% endfor %}
+    <div class="col-md-12 p-0 h-md-100 loginarea">
+        <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
+            <div class="login-wrap landing-form-wrap">
+                <div class="mb-4 mt-5 ">
+                    <div class="lycaeum-wolf">
+                        <div class="wolf-logo mb-5">
+                            <a href=""><img src="https://enskill-eas-static.s3.amazonaws.com/images/LycaeumLogo.svg"
+                                    alt="Lycaeum Logo" class="img-fluid"></a>
+                        </div>
+                        <div class="tab-content theme-dark-bg p-4 " id="pills-tabContent">
+                            <div class="tab-pane fade  show active " id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <!-- Students Signup Start -->
+                                <form class="signup-form" method="post" onsubmit="return validate()">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id=""><i
+                                                        class='bx bx-mail-send'></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Students Email"
+                                                name="email" id="mail" value="" aria-describedby="inputGroupPrepend"
+                                                required>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id=""><i class='bx bx-user'></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Username"
+                                                id="id_username" name="username" value=""
+                                                aria-describedby="inputGroupPrepend" required>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id=""><i class='bx bx-key'></i></span>
+                                            </div>
+                                            <input type="password" class="form-control" placeholder="Password" id="pass"
+                                                name="pass" aria-describedby="inputGroupPrepend" required>
+
+                                        </div>
+                                        <small style="color:#ffffff;">* Password must be minimum of 8 characters</small>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id=""><i class='bx bx-key'></i></span>
+                                            </div>
+                                            <input type="password" class="form-control" placeholder="Password again"
+                                                id="repass" name="pass2" aria-describedby="inputGroupPrepend" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id=""><i class='bx bx-key'></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Token" id="token"
+                                                name="token" aria-describedby="inputGroupPrepend">
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <button class="btn btn-block btn-red-theme" type="submit">Sign up</button></div>
+                                    <div class="form-group text-center">
+                                        <small class="text-white">Already have an account?</small>
+                                        <a href="/accounts/login_genskill/" class="showLoginForm"> Login</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
